@@ -11,6 +11,17 @@
 |
 */
 
+Route::group(["namespace" => "Api"], function () {
+    Route::post("/line/callback", "LineBotController@callback")->name(
+        "line.callback"
+    );
+});
+
+Route::group(['namespace' => 'Api'], function() {
+    // LineからのWebhookを受信
+    Route::post('/line/webhook', 'LineController@webhook')->name('line.webhook');
+});
+
 Route::get("/", function () {
     return view("welcome");
 });
