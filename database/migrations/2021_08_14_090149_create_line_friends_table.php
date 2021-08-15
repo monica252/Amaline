@@ -11,15 +11,15 @@ class CreateLineFriendsTable extends Migration
      *
      * @return void
      */
-  public function up()
-  {
-      Schema::create('line_friends', function (Blueprint $table) {
-          $table->increments('id');
-          $table->string('line_id', 64)->unique();
-          $table->string('display_name', 64);
-          $table->timestamps();
-      });
-  }
+    public function up()
+    {
+        Schema::create("line_friends", function (Blueprint $table) {
+            $table->increments("id");
+            $table->string("line_id", 64)->unique();
+            $table->string("display_name", 64);
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.

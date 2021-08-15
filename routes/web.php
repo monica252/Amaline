@@ -17,9 +17,11 @@ Route::group(["namespace" => "Api"], function () {
     );
 });
 
-Route::group(['namespace' => 'Api'], function() {
+Route::group(["namespace" => "Api"], function () {
     // LineからのWebhookを受信
-    Route::post('/line/webhook', 'LineController@webhook')->name('line.webhook');
+    Route::post("/line/webhook", "LineController@webhook")->name(
+        "line.webhook"
+    );
 });
 
 Route::get("/", function () {
